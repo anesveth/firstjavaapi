@@ -12,25 +12,28 @@ public class Grades {
     public String index(){
         Scanner scan = new Scanner(System.in);
         System.out.println("--GRADES--\n Write the mark the student got:");
-        int grade = scan.nextInt();
+        int mark = scan.nextInt();
+        return CalculateGrade(mark);
 
-        if (grade<40){
+    }
+
+    public static String CalculateGrade(int mark){
+        if (mark<40){
             return ("GRADE: D\n");
         }
-        if (grade>=40 && grade<50){
+        if (mark>=40 && mark<50){
             return ("GRADE: C\n");
         }
-        if (grade>=50 && grade<60){
+        if (mark>=50 && mark<60){
             return ("GRADE: B\n");
         }
-        if (grade>=60 && grade<=75){
+        if (mark>=60 && mark<=75){
             return ("GRADE: A\n");
         }
-        if (grade>75){
+        if (mark>75){
             return ("GRADE: O\n");
         }
         return "Grade not available, try a different mark";
-
 
     }
 }
