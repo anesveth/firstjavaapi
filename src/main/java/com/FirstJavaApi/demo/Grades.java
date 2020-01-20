@@ -1,6 +1,7 @@
 package com.FirstJavaApi.demo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Scanner;
@@ -9,10 +10,7 @@ import java.util.Scanner;
 public class Grades {
 
     @RequestMapping("/")
-    public String index(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("--GRADES--\n Write the mark the student got:");
-        int mark = scan.nextInt();
+    public String index(@RequestParam(value="mark") int mark){
         return CalculateGrade(mark);
 
     }
